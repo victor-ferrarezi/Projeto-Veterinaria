@@ -1,9 +1,14 @@
 package com.example.Vet.entities;
 
+import com.example.Vet.pets.Pet;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,5 +25,8 @@ public class Cliente {
     private String nome;
     private String telefone;
     private String email;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Pet> pets;
 
 }
