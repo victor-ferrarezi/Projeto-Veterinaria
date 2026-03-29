@@ -17,7 +17,7 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
     @PostMapping
-    public Cliente salvar(@RequestBody Cliente cliente) {
+    public Cliente save(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 

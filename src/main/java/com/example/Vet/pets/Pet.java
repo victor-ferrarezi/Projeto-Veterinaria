@@ -2,6 +2,7 @@ package com.example.Vet.pets;
 
 
 import com.example.Vet.entities.Cliente;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,7 +23,7 @@ public class Pet {
     private String sexo;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonBackReference
     private Cliente cliente;
 
 

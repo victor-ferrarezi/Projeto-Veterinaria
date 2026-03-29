@@ -1,6 +1,7 @@
 package com.example.Vet.entities;
 
 import com.example.Vet.pets.Pet;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -27,6 +28,7 @@ public class Cliente {
     private String email;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonManagedReference
     private List<Pet> pets;
 
 }

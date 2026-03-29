@@ -16,7 +16,7 @@ public class PetController {
     private PetRepository petRepository;
 
     @PostMapping
-    public Pet salvar(@RequestBody Pet pet) {
+    public Pet save (@RequestBody Pet pet) {
         return petRepository.save(pet);
     }
 
@@ -26,12 +26,12 @@ public class PetController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@RequestParam Long id){
+    public void delete(@PathVariable Long id){
         petRepository.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public Pet atualizar(@PathVariable Long id, @RequestBody Pet dados){
+    public Pet update (@PathVariable Long id, @RequestBody Pet dados){
 
         Pet pet = petRepository.findById(id).orElse(null);
 
